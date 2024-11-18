@@ -11,16 +11,12 @@
     "deploy": "strapi deploy"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.25.11",
-    "@strapi/plugin-i18n": "4.25.11",
-    "@strapi/plugin-users-permissions": "4.25.11",
-    "@strapi/provider-upload-cloudinary": "^5.1.0",
-    "@strapi/strapi": "^4.25.13",
-    "pg": "8.8.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "@strapi/plugin-cloud": "^4.25.11",
+    "@strapi/plugin-i18n": "^4.25.11",
+    "@strapi/plugin-users-permissions": "^4.25.11",
+    "@strapi/provider-upload-cloudinary": "^4.25.11",
+    "@strapi/strapi": "^4.25.16",
+    "pg": "8.8.0"
   },
   "author": {
     "name": "A Strapi developer"
