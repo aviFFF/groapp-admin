@@ -4,14 +4,15 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order"
+    "displayName": "Order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "username": {
+    "firstname": {
       "type": "string"
     },
     "email": {
@@ -39,6 +40,13 @@
       "type": "component",
       "repeatable": true,
       "component": "ordered-item.ordered-item"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string",
+      "default": "Pending"
     }
   }
 }
