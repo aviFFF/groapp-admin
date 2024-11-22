@@ -515,6 +515,36 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromocodePromocode extends Schema.CollectionType {
+  collectionName: 'promocodes';
+  info: {
+    displayName: 'Promocode';
+    pluralName: 'promocodes';
+    singularName: 'promocode';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promocode.promocode',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    name: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::promocode.promocode',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSliderSlider extends Schema.CollectionType {
   collectionName: 'sliders';
   info: {
@@ -1031,6 +1061,7 @@ declare module '@strapi/types' {
       'api::order.order': ApiOrderOrder;
       'api::pincode.pincode': ApiPincodePincode;
       'api::product.product': ApiProductProduct;
+      'api::promocode.promocode': ApiPromocodePromocode;
       'api::slider.slider': ApiSliderSlider;
       'api::user-cart.user-cart': ApiUserCartUserCart;
       'plugin::content-releases.release': PluginContentReleasesRelease;
