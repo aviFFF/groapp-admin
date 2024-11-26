@@ -578,6 +578,37 @@ export interface ApiSliderSlider extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubscriptionSubscription extends Schema.CollectionType {
+  collectionName: 'subscriptions';
+  info: {
+    displayName: 'Subscription';
+    pluralName: 'subscriptions';
+    singularName: 'subscription';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subscription.subscription',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    Endpoint: Attribute.String & Attribute.Required & Attribute.Unique;
+    Keys: Attribute.JSON & Attribute.Required;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::subscription.subscription',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserCartUserCart extends Schema.CollectionType {
   collectionName: 'user_carts';
   info: {
@@ -1063,6 +1094,7 @@ declare module '@strapi/types' {
       'api::product.product': ApiProductProduct;
       'api::promocode.promocode': ApiPromocodePromocode;
       'api::slider.slider': ApiSliderSlider;
+      'api::subscription.subscription': ApiSubscriptionSubscription;
       'api::user-cart.user-cart': ApiUserCartUserCart;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
