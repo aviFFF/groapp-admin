@@ -581,6 +581,7 @@ export interface ApiSliderSlider extends Schema.CollectionType {
 export interface ApiSubscriptionSubscription extends Schema.CollectionType {
   collectionName: 'subscriptions';
   info: {
+    description: '';
     displayName: 'Subscription';
     pluralName: 'subscriptions';
     singularName: 'subscription';
