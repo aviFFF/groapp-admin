@@ -413,6 +413,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
   };
   attributes: {
     address: Attribute.Text;
+    city: Attribute.String;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::order.order',
@@ -512,6 +513,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    vendor: Attribute.String;
   };
 }
 

@@ -47,6 +47,9 @@
     "Status": {
       "type": "string",
       "default": "Pending"
+    },
+    "city": {
+      "type": "string"
     }
   }
 }

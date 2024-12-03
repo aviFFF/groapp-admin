@@ -46,6 +46,9 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "products"
+    },
+    "vendor": {
+      "type": "string"
     }
   }
 }
