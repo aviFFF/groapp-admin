@@ -50,6 +50,12 @@
     },
     "city": {
       "type": "string"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vendor.vendor",
+      "inversedBy": "orders"
     }
   }
 }

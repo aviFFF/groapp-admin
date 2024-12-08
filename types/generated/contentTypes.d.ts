@@ -439,6 +439,11 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     > &
       Attribute.Private;
     userid: Attribute.Integer;
+    vendor: Attribute.Relation<
+      'api::order.order',
+      'manyToOne',
+      'api::vendor.vendor'
+    >;
   };
 }
 
@@ -652,6 +657,45 @@ export interface ApiUserCartUserCart extends Schema.CollectionType {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiVendorVendor extends Schema.CollectionType {
+  collectionName: 'vendors';
+  info: {
+    description: '';
+    displayName: 'vendor';
+    pluralName: 'vendors';
+    singularName: 'vendor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::vendor.vendor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    email: Attribute.Email;
+    name: Attribute.String;
+    orders: Attribute.Relation<
+      'api::vendor.vendor',
+      'oneToMany',
+      'api::order.order'
+    >;
+    password: Attribute.Password;
+    phone: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::vendor.vendor',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1099,6 +1143,7 @@ declare module '@strapi/types' {
       'api::slider.slider': ApiSliderSlider;
       'api::subscription.subscription': ApiSubscriptionSubscription;
       'api::user-cart.user-cart': ApiUserCartUserCart;
+      'api::vendor.vendor': ApiVendorVendor;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
