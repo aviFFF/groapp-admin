@@ -1,8 +1,12 @@
 'use strict';
 
-/**
- * subscription service
- */
+module.exports = {
+    async create(data) {
+      // @ts-ignore
+      return await strapi.query('subscription').create({ data });
+    },
+  };
+  
 
 const { createCoreService } = require('@strapi/strapi').factories;
 

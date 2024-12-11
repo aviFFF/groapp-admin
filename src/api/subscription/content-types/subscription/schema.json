@@ -12,12 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Endpoint": {
+    "endpoint": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Keys": {
+    "keys": {
       "type": "json",
       "required": true
     }
