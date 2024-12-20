@@ -14,7 +14,7 @@
     "@strapi/plugin-cloud": "^4.25.11",
     "@strapi/plugin-i18n": "^4.25.11",
     "@strapi/plugin-users-permissions": "^4.25.11",
-    "@strapi/provider-upload-cloudinary": "^4.25.16",
+    "@strapi/provider-upload-cloudinary": "^4.25.18",
     "@strapi/strapi": "^4.25.16",
     "cloudinary": "^2.5.1",
     "firebase-admin": "^13.0.1",

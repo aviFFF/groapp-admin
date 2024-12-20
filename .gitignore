@@ -113,4 +113,5 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
-firebase-service-account.json
+config/firebase-file.json
+firebase-file.json

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/notifications/send",
+      "handler": "notifications.sendNotification",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
