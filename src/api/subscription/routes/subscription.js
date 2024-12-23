@@ -1,8 +1,20 @@
 'use strict';
 
-/**
- * subscription router
- */
+module.exports = {
+    routes: [
+      {
+        method: "POST",
+        path: "/save-subscription",
+        handler: "subscription.save",
+        config: {
+          policies: [],
+          middlewares: [],
+        },
+      },
+    ],
+  };
+  
+  
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 

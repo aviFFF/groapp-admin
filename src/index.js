@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 module.exports = {
   /**
    * An asynchronous register function that runs before
@@ -18,3 +20,4 @@ module.exports = {
    */
   bootstrap(/*{ strapi }*/) {},
 };
+

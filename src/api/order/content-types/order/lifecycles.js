@@ -1,20 +1,24 @@
+const sendNotification = require("../../../../utils/sendNotification");
+
 module.exports = {
-    async afterCreate(event) {
-      const { result } = event;
-  
-      // Emit WebSocket event to the relevant vendor
-      const vendorId = result.vendor; // Replace with your actual vendor field key
-      const orderId = result.id;
-  
+  async afterCreate(event) {
+    const { result } = event;
+
+    // Fetch all vendor subscriptions
+    const subscriptions = await strapi.db.query("api::subscription.subscription").findMany();
+
+    // Payload to send
+    const payload = {
+      title: "New Order Received",
+      body: `Order ID: ${result.id} - ${result.customerName}`,
+    };
+
+    // Send notification to each subscription
+    subscriptions.forEach((subscription) => {
       // @ts-ignore
-      if (strapi.io) {
-        // @ts-ignore
-        strapi.io.to(`vendor-${vendorId}`).emit("new-order", {
-          orderId,
-          message: `New order received: ${orderId}`,
-        });
-        console.log(`Notification sent for new order: ${orderId}`);
-      }
-    },
-  };
-  
+      sendNotification(subscription, payload);
+    });
+
+    strapi.log.info("Notifications sent for new order.");
+  },
+};

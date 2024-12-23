@@ -18,8 +18,12 @@ module.exports = ({ env }) => {
     // Add the socket.io server after Strapi has started
     async bootstrap() {
       // Ensure Strapi's server is initialized
-      const httpServer = strapi.server.httpServer;
-
+      const httpServer = strapi.server?.httpServer;
+      if (!httpServer) {
+        console.error("HTTP Server is not initialized. Socket.IO setup failed.");
+        return;
+      }
+      
       // Initialize Socket.io only after the server is ready
       const io = new Server(httpServer, {
         cors: {
