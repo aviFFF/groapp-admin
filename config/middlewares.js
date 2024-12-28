@@ -19,7 +19,7 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:3000'], // Replace with the URL of your frontend
+      origin: ['http://localhost:3000' ,'https://buzzat-admin.onrender.com','https://buzzat.in'], 
       headers: ['Content-Type', 'Authorization', 'X-Requested-With', 'Origin'],
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
     },
