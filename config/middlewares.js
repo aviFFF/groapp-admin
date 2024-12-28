@@ -7,7 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:', 'ws://localhost:1337', 'wss://localhost:1337', 'https://buzzat.in','https://buzzat-admin.onrender.com'], // Allow WebSocket connections
+          'connect-src': ["'self'", 'https:', 'ws://localhost:1337', 'wss://localhost:1337', 'https://buzzat.in','https://buzzat-admin.onrender.com', 'cloudinary.com'], // Allow WebSocket connections
           'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
           'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
           upgradeInsecureRequests: null,
